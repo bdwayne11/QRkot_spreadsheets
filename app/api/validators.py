@@ -58,7 +58,6 @@ async def check_project_on_donations_before_delete(
 async def check_project_before_update(
         project_id: int,
         project_in: CharityProjectUpdate,
-
         session: AsyncSession
 ) -> CharityProject:
     project = await check_project_exists(

@@ -3,6 +3,24 @@ from typing import Optional
 from pydantic import BaseSettings, EmailStr
 
 
+RANGE = 'A1:E777'
+SHEETS_VERSION = 'v4'
+DRIVE_VERSION = 'v3'
+FORMAT = "%Y/%m/%d %H:%M:%S"
+SPREADSHEET_BODY = {
+    'properties': {'title': '', 'locale': 'ru_RU'},
+    'sheets': [{
+        'properties': {
+            'sheetType': 'GRID',
+            'sheetId': 0,
+            'title': 'Лист1',
+            'gridProperties': {'rowCount': 100, 'columnCount': 100}
+        }
+    }]
+}
+VALUE_INPUT_OPTION = 'USER_ENTERED'
+
+
 class Settings(BaseSettings):
     app_title: str = 'Приложение QR-кот'
     description: str = 'Приложение для благотворительности'
